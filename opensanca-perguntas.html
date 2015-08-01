@@ -1,0 +1,44 @@
+<head>
+  <title>opensanca-perguntas</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bem vindos ao Workshop</h1>
+    {{> questions}}
+  </div>
+</body>
+
+<template name="questions">
+  {{#each questions}}
+    {{> question}}
+  {{else}}
+    <p>Nada pra ver</p>
+  {{/each}}
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      Nova pergunta
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <input class="inpText form-control" />
+      </div>
+      <div class="form-group">
+        <button class="btnAdd btn btn-default">Perguntar</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<template name="question">
+  <div class="panel panel-default" >
+    <div class="panel-body">
+      <p>{{text}}</p>
+      <p>{{votes}} votos</p>
+      <button class="btnRemove btn btn-default">Respondida</button>
+      <button class="btnVote btn btn-default">+1</button>
+    </div>
+  </div>
+</template>
